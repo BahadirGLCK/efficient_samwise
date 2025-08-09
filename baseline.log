@@ -1,0 +1,13 @@
+Specified path is a video or folder with frames, using video-level configuration
+Start inference
+Extracting frames from .mp4 in frames_example_video with ffmpeg...
+frames_example_video already exists, using frames in that folder
+Begin inference on 50 frames
+Saving output to disk in demo_output/the_horse_jumping
+MoviePy - Building video demo_output/the_horse_jumping.mp4.
+MoviePy - Writing video demo_output/the_horse_jumping.mp4
+
+MoviePy - Done !
+MoviePy - video ready demo_output/the_horse_jumping.mp4
+Output masks and videos can be found in demo_output
+Total inference time: 12.5596 s

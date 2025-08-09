@@ -1,0 +1,65 @@
+Specified path is a video or folder with frames, using video-level configuration
+Dropping parameter sam.memory_attention.layers.2.self_attn.q_proj.weight
+Dropping parameter sam.memory_attention.layers.2.self_attn.q_proj.bias
+Dropping parameter sam.memory_attention.layers.2.self_attn.k_proj.weight
+Dropping parameter sam.memory_attention.layers.2.self_attn.k_proj.bias
+Dropping parameter sam.memory_attention.layers.2.self_attn.v_proj.weight
+Dropping parameter sam.memory_attention.layers.2.self_attn.v_proj.bias
+Dropping parameter sam.memory_attention.layers.2.self_attn.out_proj.weight
+Dropping parameter sam.memory_attention.layers.2.self_attn.out_proj.bias
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.q_proj.weight
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.q_proj.bias
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.k_proj.weight
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.k_proj.bias
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.v_proj.weight
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.v_proj.bias
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.out_proj.weight
+Dropping parameter sam.memory_attention.layers.2.cross_attn_image.out_proj.bias
+Dropping parameter sam.memory_attention.layers.2.linear1.weight
+Dropping parameter sam.memory_attention.layers.2.linear1.bias
+Dropping parameter sam.memory_attention.layers.2.linear2.weight
+Dropping parameter sam.memory_attention.layers.2.linear2.bias
+Dropping parameter sam.memory_attention.layers.2.norm1.weight
+Dropping parameter sam.memory_attention.layers.2.norm1.bias
+Dropping parameter sam.memory_attention.layers.2.norm2.weight
+Dropping parameter sam.memory_attention.layers.2.norm2.bias
+Dropping parameter sam.memory_attention.layers.2.norm3.weight
+Dropping parameter sam.memory_attention.layers.2.norm3.bias
+Dropping parameter sam.memory_attention.layers.3.self_attn.q_proj.weight
+Dropping parameter sam.memory_attention.layers.3.self_attn.q_proj.bias
+Dropping parameter sam.memory_attention.layers.3.self_attn.k_proj.weight
+Dropping parameter sam.memory_attention.layers.3.self_attn.k_proj.bias
+Dropping parameter sam.memory_attention.layers.3.self_attn.v_proj.weight
+Dropping parameter sam.memory_attention.layers.3.self_attn.v_proj.bias
+Dropping parameter sam.memory_attention.layers.3.self_attn.out_proj.weight
+Dropping parameter sam.memory_attention.layers.3.self_attn.out_proj.bias
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.q_proj.weight
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.q_proj.bias
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.k_proj.weight
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.k_proj.bias
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.v_proj.weight
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.v_proj.bias
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.out_proj.weight
+Dropping parameter sam.memory_attention.layers.3.cross_attn_image.out_proj.bias
+Dropping parameter sam.memory_attention.layers.3.linear1.weight
+Dropping parameter sam.memory_attention.layers.3.linear1.bias
+Dropping parameter sam.memory_attention.layers.3.linear2.weight
+Dropping parameter sam.memory_attention.layers.3.linear2.bias
+Dropping parameter sam.memory_attention.layers.3.norm1.weight
+Dropping parameter sam.memory_attention.layers.3.norm1.bias
+Dropping parameter sam.memory_attention.layers.3.norm2.weight
+Dropping parameter sam.memory_attention.layers.3.norm2.bias
+Dropping parameter sam.memory_attention.layers.3.norm3.weight
+Dropping parameter sam.memory_attention.layers.3.norm3.bias
+Start inference
+Extracting frames from .mp4 in frames_example_video with ffmpeg...
+frames_example_video already exists, using frames in that folder
+Begin inference on 50 frames
+Saving output to disk in demo_output/the_horse_jumping
+MoviePy - Building video demo_output/the_horse_jumping.mp4.
+MoviePy - Writing video demo_output/the_horse_jumping.mp4
+
+MoviePy - Done !
+MoviePy - video ready demo_output/the_horse_jumping.mp4
+Output masks and videos can be found in demo_output
+Total inference time: 11.2698 s
