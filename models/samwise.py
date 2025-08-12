@@ -303,13 +303,35 @@ class SAMWISE(nn.Module):
             # Fallback: obtain multi-scale features directly from trunk
             feats = trunk(samples)  # List[N, C, H, W]
             vis_outs = [x for x in feats]
-            # Run full text encoder once
-            txt = self.forw_layer_list(0, len(self.text_encoder.model.encoder.sentence_encoder.layers),
-                                       self.text_encoder.model.encoder.sentence_encoder.layers, txt, attention_mask)
+            # Run full text encoder once (LND)
+            txt = self.forw_layer_list(
+                0,
+                len(self.text_encoder.model.encoder.sentence_encoder.layers),
+                self.text_encoder.model.encoder.sentence_encoder.layers,
+                txt,
+                attention_mask,
+            )
+
+            # Apply CMT adapters on selected TIMM feature scales to retain cross-modal temporal fusion
+            # Map adapters to the highest-resolution feature maps by default
+            if len(self.cmt_adapters) > 0 and len(vis_outs) > 0:
+                num_adapters = len(self.cmt_adapters)
+                # choose last K feature maps (higher resolution) for adaptation
+                k = min(num_adapters, len(vis_outs))
+                target_scale_indices = list(range(len(vis_outs) - k, len(vis_outs)))
+                for adapter_idx, scale_idx in enumerate(target_scale_indices):
+                    v = vis_outs[scale_idx]
+                    # v: (B*T, C, H, W); txt: LND
+                    v_out, t_out = self.cmt_adapters[adapter_idx](v, T, txt)
+                    vis_outs[scale_idx] = v + v_out
+                    txt = txt + t_out
+
+            # Prepare text state (NLD) and repeat across frames when needed
             txt_nld = txt.permute(1, 0, 2)  # LND -> NLD
             state = txt_nld[:, 0]
             if T > 1:
                 state = state.repeat_interleave(T, 0)
+
             if self.motion_prompt:
                 return vis_outs, state, txt_nld
             return vis_outs, state
